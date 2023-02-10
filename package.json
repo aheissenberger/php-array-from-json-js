@@ -3,6 +3,30 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/php-array-from-json-js.umd.cjs",
+  "module": "./dist/php-array-from-json-js.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./distphp-array-from-json-js.js",
+      "require": "./distphp-array-from-json-js.umd.cjs"
+    }
+  },
+  "license": "bsd-2-clause",
+  "description": "Create PHP Array from JSON or Javascript Object Notation Code.",
+  "keywords": [
+    "php",
+    "json",
+    "js",
+    "array",
+    "converter"
+  ],
+  "author": "Andreas Heissenberger <andreas@heissenberger.at>",
+  "homepage": "https://github.com/aheissenberger/php-array-from-json-js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aheissenberger/php-array-from-json-js.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -10,8 +34,10 @@
     "test": "vitest"
   },
   "devDependencies": {
+    "@types/node": "^18.13.0",
     "typescript": "^4.9.3",
     "vite": "^4.1.0",
+    "vite-plugin-dts": "^1.7.2",
     "vitest": "^0.28.4"
   }
 }
