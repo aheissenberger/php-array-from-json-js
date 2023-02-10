@@ -1,6 +1,6 @@
 {
   "name": "php-array-from-json-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "./dist/php-array-from-json-js.umd.cjs",
   "module": "./dist/php-array-from-json-js.js",
