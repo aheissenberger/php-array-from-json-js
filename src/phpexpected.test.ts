@@ -1,17 +1,17 @@
-import { describe, expect, suite, test } from 'vitest'
+import { spawn } from 'child_process';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import which from 'which'
-import { spawn } from 'child_process';
+import { describe, test } from 'vitest';
+import which from 'which';
 
 const phpExecNotExists = (which.sync('php', { nothrow: true }) === null)
 
 describe.skipIf(phpExecNotExists)('check php result string syntax', () => {
 
     const testFile = readFileSync(join(__dirname, 'index.test.ts'), 'utf-8');
-    const phpdata = testFile.split("\n").reduce((pv, line) => {
+    const phpdata = testFile.split("\n").reduce((pv: string[], line) => {
         if (line.match(/const\sexpected\s*=\s*/i)) {
-            const phpvariableData = new Function(`${line};return expected;`)();
+            const phpvariableData = String(new Function(`${line};return expected;`)());
             pv.push(phpvariableData)
         }
         return pv
