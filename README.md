@@ -1,6 +1,6 @@
 # PHP Array from JSON/JS
 
-Create PHP Array from JSON or Javascript Object Notation Code.
+Create PHP Array from JSON or JavaScript object notation Code.
 
 ## Installation
 
@@ -36,7 +36,7 @@ console.log(phparray) // ["key"=>[1,"string",NULL,NULL,true]]
 **UMD**
 
 ```Javascript
-const {html2markdown} = require('php-array-from-json-js')
+const {json2phpArray} = require('php-array-from-json-js')
 ```
 
 ### Roadmap
