@@ -1,6 +1,5 @@
 {
   "name": "php-array-from-json-js",
-  "private": true,
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/php-array-from-json-js.umd.cjs",
@@ -31,13 +30,16 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "npm:publish": "vitest --run && yarn publish"
   },
   "devDependencies": {
     "@types/node": "^18.13.0",
+    "@types/which": "^2.0.1",
     "typescript": "^4.9.3",
     "vite": "^4.1.0",
     "vite-plugin-dts": "^1.7.2",
-    "vitest": "^0.28.4"
+    "vitest": "^0.28.4",
+    "which": "^3.0.0"
   }
 }
