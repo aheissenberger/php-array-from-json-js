@@ -23,9 +23,9 @@ yarn install php-array-from-json-js
 ```Javascript
 import {json2phpArray,js2phpArray} from 'php-array-from-json-js'
 
-const json = '{"key":[1,"string",NULL,true]}'
+const json = '{"key":[1,"string",true]}'
 const phparray = json2phpArray(json)
-console.log(phparray) // ["key"=>[1,"string",NULL,true]]
+console.log(phparray) // ["key"=>[1,"string",true]]
 
 const js = '{key:[1,"string",NULL,,true]}'
 const phparray = js2phpArray(js)
