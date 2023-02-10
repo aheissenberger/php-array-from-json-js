@@ -61,6 +61,8 @@ Contributions are what make the open source community such an amazing place to b
 - [vitejs](https://vitejs.dev)
 - [vitest](https://vitest.dev)
 
+development with Vitejs is based on this [documentation](https://onderonur.netlify.app/blog/creating-a-typescript-library-with-vite/)
+
 ### License
 
 Distributed under the "bsd-2-clause" License. See [LICENSE.txt](LICENSE.txt) for more information.
