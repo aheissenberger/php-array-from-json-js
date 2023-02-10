@@ -1,6 +1,6 @@
 {
   "name": "php-array-from-json-js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "main": "./dist/php-array-from-json-js.umd.cjs",
   "module": "./dist/php-array-from-json-js.js",
@@ -31,7 +31,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "npm:publish": "vitest --run && yarn publish"
+    "npm:publish": "vitest --run && tsc && vite build && yarn publish"
   },
   "devDependencies": {
     "@types/node": "^18.13.0",
