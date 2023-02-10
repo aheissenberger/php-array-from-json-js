@@ -1,4 +1,8 @@
-export default function obj2phpArray(obj: any): string | object {
+export default function obj2phpArray(obj: any) {
+    return String(obj2phpArrayWriter(obj))
+}
+
+function obj2phpArrayWriter(obj: any): string | object {
     if (typeof obj === 'string') {
         return stringEscape(obj)
     } else if (obj === null || (typeof obj === 'undefined')) {
