@@ -7,8 +7,8 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./distphp-array-from-json-js.js",
-      "require": "./distphp-array-from-json-js.umd.cjs"
+      "import": "./dist/php-array-from-json-js.js",
+      "require": "./dist/php-array-from-json-js.umd.cjs"
     }
   },
   "license": "bsd-2-clause",
