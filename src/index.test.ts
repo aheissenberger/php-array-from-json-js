@@ -1,4 +1,4 @@
-import { assert, expect, suite, test } from 'vitest'
+import { expect, suite, test } from 'vitest'
 
 import { json2phpArray, js2phpArray } from './index'
 
@@ -129,7 +129,7 @@ suite('Object', () => {
     })
     test('key with double quote', () => {
         const json = `{"ke\\"y1":1}`
-        const expected = `["ke\"y1"=>1]`;
+        const expected = `["ke\\\"y1"=>1]`;
         const res = json2phpArray(json);
         expect(res).eq(expected)
     })
@@ -166,6 +166,22 @@ suite('js', () => {
         const expected = `["key1"=>1,"key2"=>[["a"=>[["b"=>["c"=>1]]]]]]`;
         const res = js2phpArray(js);
         expect(res).eq(expected)
+    })
+    test('one property with a array', () => {
+        const js = `[undefined]`
+        const expected = `[NULL]`;
+        const res = js2phpArray(js);
+        expect(res).eq(expected)
+    })
+    test('sparse array', () => {
+        const js = `[1,,2]`
+        const expected = `[1,NULL,2]`;
+        const res = js2phpArray(js);
+        expect(res).eq(expected)
+    })
+    test('function', () => {
+        const js = `{key:()=>("string")}`
+        expect(() => js2phpArray(js)).toThrowError(TypeError)
     })
 })
 

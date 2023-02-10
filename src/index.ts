@@ -1,4 +1,4 @@
-import obj2phpArray from './obj2phpArray'
+import obj2phpArray from './obj2phparray'
 
 export function json2phpArray(json: string) {
     const obj = JSON.parse(json)
