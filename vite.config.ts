@@ -6,8 +6,8 @@ export default defineConfig({
     build: {
         lib: {
             entry: resolve(__dirname, 'src/index.ts'),
-            name: 'php-array-from-json-j',
-            fileName: 'php-array-from-json-j',
+            name: 'php-array-from-json-js',
+            fileName: 'php-array-from-json-js',
         },
     },
     plugins: [dts()],
