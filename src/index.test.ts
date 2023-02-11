@@ -5,7 +5,7 @@ import { json2phpArray, js2phpArray } from './index'
 suite('Literal', () => {
     test('Null', () => {
         const json = "null"
-        const expected = "NULL";
+        const expected = "null";
         const res = json2phpArray(json);
         expect(res).eq(expected)
     })
@@ -90,7 +90,7 @@ suite('Array', () => {
     })
     test('mixed literals', () => {
         const json = `[null,1,"string",true]`
-        const expected = `[NULL,1,"string",true]`;
+        const expected = `[null,1,"string",true]`;
         const res = json2phpArray(json);
         expect(res).eq(expected)
     })
@@ -117,7 +117,7 @@ suite('Object', () => {
     })
     test('one property mixed literals', () => {
         const json = `{"key1":1,"key2":"string","key3":true,"key4":null}`
-        const expected = `["key1"=>1,"key2"=>"string","key3"=>true,"key4"=>NULL]`;
+        const expected = `["key1"=>1,"key2"=>"string","key3"=>true,"key4"=>null]`;
         const res = json2phpArray(json);
         expect(res).eq(expected)
     })
@@ -169,13 +169,19 @@ suite('js', () => {
     })
     test('one property with a array', () => {
         const js = `[undefined]`
-        const expected = `[NULL]`;
+        const expected = `[null]`;
+        const res = js2phpArray(js);
+        expect(res).eq(expected)
+    })
+    test('complex null', () => {
+        const js = `{key: [1, "string", true, ,null]}`
+        const expected = `["key"=>[1,"string",true,null,null]]`;
         const res = js2phpArray(js);
         expect(res).eq(expected)
     })
     test('sparse array', () => {
         const js = `[1,,2]`
-        const expected = `[1,NULL,2]`;
+        const expected = `[1,null,2]`;
         const res = js2phpArray(js);
         expect(res).eq(expected)
     })

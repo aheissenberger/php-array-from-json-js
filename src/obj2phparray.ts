@@ -6,7 +6,7 @@ function obj2phpArrayWriter(obj: any): string | object {
     if (typeof obj === 'string') {
         return stringEscape(obj)
     } else if (obj === null || (typeof obj === 'undefined')) {
-        return "NULL"
+        return "null"
     } else if (typeof obj === 'boolean') {
         return obj ? 'true' : 'false'
     } else if (typeof obj === 'number') {
