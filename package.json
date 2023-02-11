@@ -29,7 +29,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
     "test": "vitest",
     "npm:publish": "vitest --run && tsc && vite build && yarn publish"
   },
